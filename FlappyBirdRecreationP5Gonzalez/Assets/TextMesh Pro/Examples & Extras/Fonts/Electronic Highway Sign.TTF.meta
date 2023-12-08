@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 87f0dfd2ce81c224997e26d27383128c
+guid: 8a2b9e2a607dd2143b58c44bc32410b4
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,8 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
+  fontName: Electronic Highway Sign
   fontNames:
-  - Luckiest Guy
+  - Electronic Highway Sign
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
