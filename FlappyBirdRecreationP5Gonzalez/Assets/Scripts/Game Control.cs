@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour
 {
     public static GameControl Instance;
     public GameObject gameOverText;
+    public TextMeshProUGUI scoreText;
     public TextMeshProUGUI SceneText;
     public float scrollSpeed = -1.5f;
+
+    private int score = 0;
 
     public bool gameOver = false;
     // Start is called before the first frame update
@@ -32,6 +36,15 @@ public class GameControl : MonoBehaviour
         }
     }
 
+    public void BirdScored()
+    {
+        if (gameOver)
+        {
+            return;
+        }
+        score++;
+        scoreText.text = "Score: " + score.ToString();
+    }
     public void BirdDied()
     {
         gameOverText.SetActive(true);
