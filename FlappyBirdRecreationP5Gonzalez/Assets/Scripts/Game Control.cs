@@ -12,6 +12,9 @@ public class GameControl : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI SceneText;
     public float scrollSpeed = -1.5f;
+    AudioSource audioSource;
+    public AudioClip Score;
+
 
     private int score = 0;
 
@@ -19,9 +22,11 @@ public class GameControl : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        if (Instance == null) {
+        if (Instance == null)
+        {
             Instance = this;
-        } else if (Instance != this)
+        }
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
@@ -44,10 +49,22 @@ public class GameControl : MonoBehaviour
         }
         score++;
         scoreText.text = "Score: " + score.ToString();
+        PlaySound(Score);
     }
     public void BirdDied()
     {
         gameOverText.SetActive(true);
         gameOver = true;
     }
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
+    }
 }
+
